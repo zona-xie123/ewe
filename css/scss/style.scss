@@ -1,0 +1,2043 @@
+@import url("https://fonts.googleapis.com/earlyaccess/notosanstc.css");
+
+* {
+    box-sizing: border-box;
+}
+
+@keyframes fluffy1 {
+
+    0%,
+    100% {
+
+        transform: scale(1)
+    }
+
+    50% {
+        transform: scale(.9)
+    }
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(10px);
+    }
+}
+
+@keyframes move-icon {
+    0% {
+        -webkit-transform: translateY(18px);
+        transform: translateY(18px);
+    }
+
+    50% {
+        -webkit-transform: translateY(-18px);
+        transform: translateY(-18px);
+    }
+
+    100% {
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+    }
+}
+
+@keyframes fly {
+
+    from,
+    to {
+        top: 0px;
+        animation-timing-function: ease-in-out;
+    }
+
+    50% {
+        top: 100px;
+        animation-timing-function: ease-in-out;
+    }
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(-4deg);
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(4deg);
+    }
+}
+
+@keyframes balloons {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(-4deg);
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(2deg);
+    }
+}
+
+
+//大標
+@mixin main-title {
+    text-align: center;
+
+    h2 {
+        font-size: 32px;
+        color: #CC6877;
+        text-shadow: 1px 1px 0px #FFD6CB;
+    }
+}
+
+
+
+
+
+body {
+    font-family: 'Noto Sans TC', "微軟正黑體", "Microsoft JhengHei", sans-serif;
+    font-size: 14px;
+    color: #3b3b3b;
+}
+
+.img-responsive {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: #fff;
+    word-break: break-all;
+    text-decoration: none;
+}
+
+.clearfix:after {
+    display: block;
+    content: ".";
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+// 頭部
+// .esunlogo {
+//     display: block;
+//     float: left;
+//     margin: 0;
+//     padding: 5px 15px;
+
+//     img {
+//         width: 225px;
+//     }
+// }
+
+// header {
+//     position: fixed;
+//     z-index: 100;
+//     width: 100%;
+//     height: 40px;
+//     left: 0;
+//     top: 0;
+//     background-color: #f8f8f8;
+
+//     .container {
+//         max-width: 1200px;
+//         width: 100%;
+//         margin: 0 auto;
+//     }
+// }
+
+// .target-burger {
+//     right: 0;
+//     top: 0;
+//     width: 3.25em;
+//     height: 3.25em;
+//     position: absolute;
+//     display: block;
+//     transition: all 0.5s ease;
+// }
+
+// .buns {
+//     width: 1.625em;
+//     height: 1.625em;
+//     list-style: none;
+//     margin: -0.8125em 0 0 -0.8125em;
+//     padding: 0;
+//     position: absolute;
+//     top: 50%;
+//     left: 50%;
+//     transform: translateZ(0);
+//     color: #fff;
+//     transition: transform 1s cubic-bezier(0.23, 1, 0.32, 1), color 1s cubic-bezier(0.23, 1, 0.32, 1);
+
+//     li {
+//         width: 100%;
+//         height: 2px;
+//         background-color: #009d96;
+//         position: absolute;
+//         top: 50%;
+//         margin-top: -0.75px;
+//         transform: translateY(-3.75px) translateZ(0);
+//         transition: transform 1s cubic-bezier(0.23, 1, 0.32, 1), background-color 1s cubic-bezier(0.23, 1, 0.32, 1);
+
+//         &:last-child {
+//             transform: translateY(3.75px) translateZ(0);
+//         }
+//     }
+// }
+
+// nav {
+//     ul {
+//         list-style: none;
+
+//         li {
+//             font-size: 16px;
+//             margin: 0 10px;
+
+//             a {
+//                 transition: .3s;
+//                 color: #009d98;
+//                 cursor: pointer;
+//             }
+//         }
+//     }
+// }
+
+//kv
+.kv {
+    background: url(../img/kv_bg_2.jpg);
+    background-size: cover;
+    background-position: bottom;
+    position: relative;
+    height: 611px;
+    padding-top: 80px;
+    margin-top: -13px;
+    overflow: hidden;
+    width: 100%;
+    svg {
+        overflow: initial;
+    }
+
+    .icon-1,
+    .icon-2,
+    .icon-3,
+    .icon-4 {
+        animation: move-icon 3s ease-out infinite alternate;
+    }
+
+    .icon-2 {
+        animation-delay: .4;
+        animation-duration: 2.8s;
+    }
+
+    .icon-3 {
+        animation-delay: .4;
+        animation-duration: 2.8s;
+    }
+
+    .tabs {
+        list-style: none;
+        display: table;
+        margin: 0 auto;
+        padding: 0;
+        position: relative;
+        max-width: 576px;
+        text-align: center;
+        width: 100%;
+        z-index: 2;
+
+        span {
+            font-size: 18px;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        li {
+            display: inline-block;
+            max-width: 250px;
+            width: 100%;
+            vertical-align: middle;
+
+            .active {
+
+                background: #f9bb3b;
+                border-color: transparent;
+            }
+
+            a {
+                transition: .3s;
+                display: block;
+
+                margin: 0 20px;
+                text-align: center;
+                border: 1px solid #fff;
+                padding: 10px;
+                border-radius: 30px;
+                font-weight: bold;
+
+                h2 {
+                    font-size: 24px;
+                    margin: 0;
+                }
+
+                position: relative;
+
+                &:not(.active) {
+                    animation: fluffy1 2s infinite cubic-bezier(0.4, 0, 0.2, 1);
+                }
+
+            }
+        }
+
+        .invest {}
+    }
+
+    .container {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    h1 {
+        text-align: center;
+        color: #fff;
+        font-size: 40px;
+    }
+
+    svg {
+        max-width: 740px;
+        width: 100%;
+        margin: 65px auto;
+        display: block;
+    }
+
+    .tab_kv {
+        position: absolute;
+        bottom: -3px;
+        left: 50%;
+        transform: translateX(-50%);
+
+        img {
+            max-width: 481px;
+            width: 100%;
+        }
+    }
+
+    .tab_2_kv {
+        position: absolute;
+        bottom: -3px;
+        left: 50%;
+        transform: translateX(-50%);
+
+        img {
+            max-width: 481px;
+            width: 100%;
+        }
+    }
+}
+
+.scroll_down {
+    max-width: 27px;
+    width: 100%;
+    animation: scroll .5s ease-in alternate infinite;
+    display: block;
+    margin: 16px auto;
+}
+
+//common_btn
+.btn-group {
+    a {
+        display: inline-block;
+        max-width: 162px;
+        width: 100%;
+        border-radius: 50px;
+        color: #fff;
+        font-size: 18px;
+        transition: .3s;
+        padding: 10px;
+        text-align: center;
+        margin-right: 10px;
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+
+    .btn_green {
+        background: #42bc9f;
+    }
+
+    .btn_pink {
+        background: #ff6478;
+    }
+}
+
+//同場加映
+//同場加映
+.balloon_bear {
+    max-width: 368px;
+    width: 100%;
+    display: inline-block;
+    vertical-align: middle;
+
+    svg {
+        max-width: 230px;
+        width: 100%;
+        display: block;
+        margin: 0 auto;
+
+        .bear_move {
+            animation: fly 6s infinite;
+            transform-origin: bottom center;
+        }
+
+        .yellow {
+            animation: balloons 5s ease-in-out infinite;
+            transform-origin: bottom center;
+        }
+
+        .red {
+            animation: balloons 5s ease-in-out infinite;
+            transform-origin: bottom center;
+            animation-delay: .5s;
+        }
+
+        .blue {
+            animation: balloons 5s ease-in-out infinite;
+            transform-origin: bottom center;
+            animation-delay: .8s;
+        }
+    }
+}
+
+.efingo_txt {
+    display: inline-block;
+    max-width: 511px;
+    width: 100%;
+    vertical-align: middle;
+    text-align: left;
+
+    a {
+        display: block;
+        color: #1140d3;
+
+        h3 {
+            font-weight: normal;
+        }
+    }
+
+    p {
+        font-size: 18px;
+        line-height: 25px;
+
+        span {
+            color: #f9503e;
+        }
+    }
+
+    h2 {
+        color: #1f4c9f;
+        font-size: 26px;
+    }
+}
+
+//tab-1
+#tab1 {
+
+    //還沒有外幣帳戶嗎？
+    .bottom_section {
+        background: #f2709c;
+        /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #ff9472, #f2709c);
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #ff9472, #f2709c);
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        color: #ffffff;
+        padding: 100px 20px;
+
+        .container {
+            max-width: 1080px;
+            width: 100%;
+            position: relative;
+            margin: 0 auto;
+
+            .bottom_pic {
+                max-width: 589px;
+                width: 100%;
+                position: absolute;
+                right: 0;
+                bottom: -100px;
+            }
+        }
+
+        .more {
+            font-size: 18px;
+            position: relative;
+            display: block;
+            max-width: 102px;
+            width: 100%;
+
+            &::after {
+                content: '';
+                display: block;
+                width: 100%;
+                height: 1px;
+                background: #fff;
+            }
+
+            img {
+                max-width: 18px;
+                width: 100%;
+                display: inline-block;
+                vertical-align: middle;
+                margin-left: 6px;
+            }
+        }
+
+        h3 {
+            font-weight: normal;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .block {
+            margin-bottom: 70px;
+            text-align: left;
+
+            h2 {
+                margin: 0;
+                font-size: 30px;
+                color: #fff;
+            }
+
+            p {
+                font-size: 18px;
+                max-width: 457px;
+                width: 100%;
+                line-height: 26px;
+
+                span {
+                    font-weight: bold;
+                    font-size: 20px;
+                }
+            }
+
+            a {
+                display: block;
+                max-width: 162px;
+                width: 100%;
+                border-radius: 50px;
+                background: #ffffff;
+                color: #ff9472;
+                font-size: 18px;
+                transition: .3s;
+                padding: 10px;
+                text-align: center;
+            }
+        }
+
+    }
+
+    //掌握外幣進場時機，買划算外幣
+    .row {
+        max-width: 820px;
+        width: 100%;
+        margin: 0 auto;
+        text-align: left;
+
+        .col-6 {
+            display: inline-block;
+            max-width: 364px;
+            text-align: center;
+            width: 100%;
+            vertical-align: middle;
+            background: #fff;
+            box-shadow: 3px 3px 10px #ddd;
+            border-radius: 26px;
+            margin: 36px 20px;
+            padding-bottom: 20px;
+
+            p {
+                font-size: 18px;
+                line-height: 24px;
+            }
+
+            h4 {
+                margin-top: 0;
+                width: 146px;
+                margin: 0 auto;
+                background: #eeeeef;
+                font-size: 18px;
+                padding: 10px;
+                font-weight: normal;
+            }
+
+            a {
+                font-size: 18px;
+                position: relative;
+                display: block;
+                max-width: 102px;
+                color: #000;
+                margin: 10px auto;
+                width: 100%;
+
+                &::after {
+                    content: '';
+                    display: block;
+                    width: 100%;
+                    height: 1px;
+                    background: #000000;
+                }
+
+                img {
+                    max-width: 18px;
+                    width: 100%;
+                    display: inline-block;
+                    vertical-align: middle;
+                    margin-left: 6px;
+                }
+            }
+        }
+
+        .icon {
+            max-width: 200px;
+            width: 100%;
+            display: inline-block;
+            vertical-align: middle;
+
+            img {
+                max-width: 120px;
+                width: 100%;
+                display: block;
+                margin: 0 auto;
+            }
+        }
+
+        .txt {
+            text-align: left;
+            max-width: 470px;
+            vertical-align: middle;
+            width: 100%;
+            display: inline-block;
+
+            p {
+                font-size: 18px;
+                line-height: 25px;
+                max-width: 418px;
+
+                span {
+                    color: #f9503e;
+                }
+            }
+
+            h3 {
+                color: #1f4c9f;
+                font-size: 26px;
+            }
+        }
+    }
+
+    //優惠幅度
+    .discount_table {
+        .btn-group{
+            text-align: center;
+        }
+        h3{
+            color: #1f4c9f;
+            font-size: 26px;
+        }
+        table {
+            width: 100%;
+            border-collapse:collapse;
+            text-align: center;
+            background: #fff;
+            margin-bottom: 20px;
+
+        }
+td{
+    padding: 10px;
+    background: #F7F7F7;
+    border: 1px solid #fff;
+}
+        th {
+            width: 1%;
+            background: #81B1EA;
+            border: 1px solid #fff;
+            text-align: center;
+            color: #fff;
+            padding: 10px;
+
+            img {
+                max-width: 50px;
+                width: 100%;
+                display: block;
+                margin: 0px auto 6px;
+                color: #fff;
+            }
+        }
+    }
+
+    //保守投資-外幣優利定存
+    .Conservative {
+        text-align: center;
+
+        .Conservative_txt {
+            text-align: center;
+
+            .col-6 {
+                display: inline-block;
+                max-width: 300px;
+                width: 100%;
+                vertical-align: middle;
+                background: #fff;
+                box-shadow: 3px 3px 10px #ddd;
+                border-radius: 26px;
+                margin: 10px 20px;
+                padding-bottom: 20px;
+
+                p {
+                    font-size: 18px;
+                    line-height: 24px;
+                }
+
+                h4 {
+                    margin-top: 0;
+                    width: 146px;
+                    margin: 0 auto;
+                    background: #f9bb3c;
+                    color: #fff;
+                    font-size: 18px;
+                    padding: 10px;
+                    font-weight: normal;
+                }
+
+                a {
+                    display: inline-block;
+                    max-width: 162px;
+                    width: 100%;
+                    border-radius: 50px;
+                    color: #fff;
+                    font-size: 18px;
+                    transition: .3s;
+                    padding: 10px;
+                    text-align: center;
+                    margin-right: 10px;
+                    background: #42bc9f;
+
+                    &:hover {
+                        opacity: 0.8;
+                    }
+                }
+
+            }
+
+            max-width: 760px;
+            width: 100%;
+            display: inline-block;
+            vertical-align: middle;
+
+            p {
+                font-size: 18px;
+                line-height: 25px;
+
+            }
+
+            h3 {
+                color: #1f4c9f;
+                font-size: 26px;
+            }
+        }
+
+        .left-pic {
+            max-width: 360px;
+            width: 100%;
+            display: inline-block;
+            vertical-align: middle;
+
+            img {
+                max-width: 260px;
+                width: 100%;
+                display: block;
+                margin: 0 auto;
+            }
+        }
+    }
+
+    //投資section
+    .card {
+        max-width: 1074px;
+        width: 100%;
+        margin: 40px auto;
+        border-radius: 20px;
+        padding: 25px;
+        background: #fff;
+        text-align: center;
+        box-shadow: 3px 3px 10px #ea8d71;
+
+        .btn_green {
+            max-width: 190px;
+            width: 100%;
+            border-radius: 50px;
+            color: #fff;
+            text-align: center;
+            display: block;
+            transition: .3s;
+            font-size: 18px;
+            padding: 10px;
+            margin: 10px auto;
+            background: #42bc9f;
+
+            &:hover {
+                opacity: 0.9;
+            }
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 25px;
+
+        }
+
+        h3 {
+            color: #1f4c9f;
+            font-size: 26px;
+        }
+
+        h5 {
+            font-weight: normal;
+            font-size: 16px;
+            margin-bottom: 15px;
+            line-height: 24px;
+
+            span {
+                color: #1f4c9f;
+                display: block;
+                margin-bottom: 5px;
+            }
+        }
+
+        .txt {
+            margin: 70px 0;
+        }
+
+        .invest_txt {
+            max-width: 550px;
+            width: 100%;
+            display: inline-block;
+
+            .btn_pink {
+                max-width: 280px;
+                width: 100%;
+                border-radius: 50px;
+                color: #fff;
+                text-align: center;
+                display: block;
+                margin: 10px auto;
+                transition: .3s;
+                font-size: 18px;
+                padding: 10px;
+                background: #ff6478;
+
+                &:hover {
+                    opacity: 0.9;
+                }
+            }
+        }
+
+        .invest_pic {
+            max-width: 320px;
+            width: 100%;
+            display: inline-block;
+        }
+    }
+}
+
+//tab2
+.gradient {
+    padding: 80px 20px;
+    background: #ffb49e;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #ffffff, #ffb49e);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #ffffff, #ffb49e);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    padding-top: 0;
+}
+
+#tab2 {
+    table {
+        margin: 0 auto;
+        font-size: 16px;
+        line-height: 22px;
+        max-width: 446px;
+        width: 100%;
+
+        th {
+            background: #81b1ea;
+            color: #fff;
+            font-weight: normal;
+            padding: 10px;
+        }
+
+        th.yellow {
+            color: #fff100;
+        }
+
+        td {
+            background: #eeeeef;
+            padding: 10px;
+        }
+
+        td.light_gray {
+            background: #f7f7f7;
+        }
+    }
+
+    .btn-secondary {
+        display: block;
+        max-width: 275px;
+        width: 100%;
+        background: #fff;
+        border-radius: 50px;
+        color: #42bc9f;
+        border: 1px solid #42bc9f;
+        font-size: 18px;
+        transition: .3s;
+        padding: 10px;
+        text-align: center;
+    }
+
+
+
+    .txt {
+        text-align: left;
+
+        h5 {
+            font-weight: normal;
+            font-size: 16px;
+            margin-bottom: 15px;
+
+            span {
+                color: #1f4c9f;
+                display: block;
+                margin-bottom: 5px;
+            }
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 25px;
+            max-width: 418px;
+
+            span {
+                color: #f9503e;
+            }
+        }
+
+        h3 {
+            color: #1f4c9f;
+            font-size: 26px;
+        }
+    }
+
+    .row {
+        max-width: 1074px;
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+
+        .col-6 {
+            display: inline-block;
+            width: calc(100% / 2 - 10px);
+            vertical-align: middle;
+        }
+    }
+
+    //外幣ATM立即換馬上飛
+    .card {
+        max-width: 1074px;
+        width: 100%;
+        margin: 40px auto;
+        border-radius: 20px;
+        padding: 25px;
+        background: #fff;
+        text-align: center;
+        box-shadow: 3px 3px 10px #ea8d71;
+
+        img {
+            max-width: 225px;
+            width: 100%;
+            display: inline-block;
+            margin: 0 auto;
+            vertical-align: middle;
+        }
+        h3{
+            color: #1f4c9f;
+        font-size: 26px;
+        }
+        .atm_txt {
+            display: inline-block;
+            max-width: 684px;
+            width: 100%;
+            vertical-align: middle;
+
+            p {
+                font-size: 18px;
+                line-height: 25px;
+
+                span {
+                    color: #f9503e;
+                }
+            }
+
+            h3 {
+                color: #1f4c9f;
+                font-size: 26px;
+            }
+        }
+    }
+
+    //雙幣卡聰明刷
+    .currency {
+        max-width: 1074px;
+        width: 100%;
+        margin: 40px auto;
+
+        .credit {
+            .credit_card {
+                max-width: 260px;
+                width: 100%;
+                display: block;
+                margin: 0 auto;
+            }
+
+            max-width: 330px;
+            width: 100%;
+            display: inline-block;
+            vertical-align: middle;
+            position: relative;
+            margin: 0 30px;
+
+            .card_icon {
+                max-width: 154px;
+                width: 100%;
+                position: absolute;
+                left: -40px;
+                top: -48px;
+                animation: move-icon 3s ease-out infinite alternate;
+            }
+        }
+
+        .credit_txt {
+            text-align: center;
+            max-width: 575px;
+            width: 100%;
+            display: inline-block;
+            vertical-align: middle;
+
+            .table_pic {
+                position: relative;
+
+                .percent_11 {
+                    max-width: 66px;
+                    width: 100%;
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                }
+
+                .table {
+                    max-width: 365px;
+                    width: 100%;
+                    display: block;
+                    margin: 20px auto;
+                }
+            }
+
+            h5 {
+                font-weight: normal;
+                font-size: 16px;
+                margin-bottom: 15px;
+                line-height: 24px;
+
+                span {
+                    color: #1f4c9f;
+                    display: block;
+                    margin-bottom: 5px;
+                }
+            }
+
+            p {
+                font-size: 18px;
+                line-height: 25px;
+
+                span {
+                    color: #f9503e;
+                }
+            }
+
+            h3 {
+                color: #1f4c9f;
+                font-size: 26px;
+            }
+        }
+    }
+
+    //沒出國，在家網購國外商品也可刷雙幣卡！
+    .shopping {
+        max-width: 1074px;
+        width: 100%;
+        margin: 40px auto;
+
+        .shopping_txt {
+            text-align: center;
+
+            a {
+                max-width: 200px;
+                width: 100%;
+                border-radius: 50px;
+                background: #42bc9f;
+                color: #fff;
+                font-size: 18px;
+                padding: 10px;
+                display: block;
+                margin: 0 auto;
+            }
+
+            h5 {
+                font-weight: normal;
+                font-size: 16px;
+                margin-bottom: 15px;
+                line-height: 24px;
+                max-width: 600px;
+                width: 100%;
+                margin: 0 auto;
+
+                span {
+                    color: #1f4c9f;
+                    display: block;
+                    margin-bottom: 5px;
+                }
+            }
+
+            p {
+                font-size: 18px;
+                line-height: 25px;
+
+                span {
+                    color: #f9503e;
+                }
+            }
+
+            h3 {
+                color: #1f4c9f;
+                font-size: 26px;
+            }
+
+            display: inline-block;
+            max-width: 700px;
+            width: 100%;
+
+            .table_pic {
+                max-width: 472px;
+                width: 100%;
+                position: relative;
+                display: block;
+                margin: 20px auto;
+
+                .percent_29 {
+                    max-width: 66px;
+                    width: 100%;
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    right: -70px;
+                }
+            }
+        }
+
+        .shopping_pic {
+            display: inline-block;
+            max-width: 200px;
+            width: 100%;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+
+
+    //還沒有外幣帳戶嗎？
+    .bottom_section {
+        background: #f2709c;
+        /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #ff9472, #f2709c);
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #ff9472, #f2709c);
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        color: #ffffff;
+        padding: 100px 20px;
+
+        .container {
+            max-width: 1080px;
+            width: 100%;
+            position: relative;
+            margin: 0 auto;
+
+            .bottom_pic {
+                max-width: 589px;
+                width: 100%;
+                position: absolute;
+                right: 0;
+                bottom: -100px;
+            }
+        }
+
+        .more {
+            font-size: 18px;
+            position: relative;
+            display: block;
+            max-width: 102px;
+            width: 100%;
+
+            &::after {
+                content: '';
+                display: block;
+                width: 100%;
+                height: 1px;
+                background: #fff;
+            }
+
+            img {
+                max-width: 18px;
+                width: 100%;
+                display: inline-block;
+                vertical-align: middle;
+                margin-left: 6px;
+            }
+        }
+
+        h3 {
+            font-weight: normal;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .block {
+            margin-bottom: 70px;
+            text-align: left;
+
+            h2 {
+                margin: 0;
+                font-size: 30px;
+                color: #fff;
+            }
+
+            p {
+                font-size: 18px;
+                max-width: 457px;
+                width: 100%;
+                line-height: 26px;
+
+                span {
+                    font-weight: bold;
+                    font-size: 20px;
+                }
+            }
+
+            a {
+                display: block;
+                max-width: 162px;
+                width: 100%;
+                border-radius: 50px;
+                background: #ffffff;
+                color: #ff9472;
+                font-size: 18px;
+                transition: .3s;
+                padding: 10px;
+                text-align: center;
+            }
+        }
+
+    }
+}
+
+//注意事項
+h2.active_notice {
+    img {
+        transform: rotate(180deg);
+    }
+}
+
+.notice {
+    h2 {
+        background: #dbdcdc;
+        color: #231815;
+        font-size: 20px;
+        margin: 0;
+        padding: 10px;
+        text-align: center;
+
+        img {
+            width: 16px;
+            margin-left: 10px;
+            transition: .3s;
+            display: inline-block;
+            vertical-align: middle;
+        }
+    }
+
+    .con {
+        background: #eeeeef;
+        padding: 20px;
+
+        ol {
+            a {
+                color: #231815;
+                text-decoration: underline;
+            }
+
+            max-width: 1300px;
+            width: 100%;
+            line-height: 26px;
+            margin: 0px auto;
+        }
+    }
+}
+
+//浮動按鈕
+.float_btn {
+    position: fixed;
+    top: 50%;
+    right: 10px;
+z-index: 2;
+    a {
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 500;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        margin: 10px 0;
+        box-shadow: 3px 3px 0 rgba(141, 141, 141, 0.651);
+    }
+
+    .yellow {
+        background: #f9bb3c;
+    }
+
+    .pink {
+        background: #ff6478;
+    }
+}
+
+//影片
+.video iframe {
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+}
+//13%
+.btnY { 
+    background-color: #ffb000; 
+    color: #fff; 
+    &:hover{
+        background-color: #ff8d00 !important;
+    }
+}
+.btnR {
+    background-color: #ff7155;
+    color: #fff;
+    transition: 0.3s;
+    &:hover{
+        background-color: #fb4522;
+    }
+}
+#discount {
+    .btn {
+        font-size: 22px;
+        padding: 10px 20px;
+        border-radius: 50px;
+        display: inline-block;
+        transition: 0.3s;
+    }
+    padding: 10px 0px;
+    margin: 30px 0;
+    p{
+        margin: 20px 5px;
+    }
+    .container {
+        width: 60%;
+        display: flex;
+        justify-content: flex-end;
+       
+        max-width: 1040px;
+        margin: 0 auto;
+        background-image: linear-gradient(to right, #51c1e5 0%, #e0f1ed 50%);
+        background-size: cover;
+        border-radius: 20px;
+        overflow: hidden;
+        border: solid #dff4f3 3px;
+        transition: 0.5s;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+
+    .left {
+        position: relative;
+        vertical-align: top;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        padding-bottom: 0px;
+        flex: 1;
+        h3 {
+            text-align: center;
+            width: 270px;
+            margin: 0 auto;
+            background-color: #06c167;
+            color: #fff;
+            font-size: 22px;
+            font-weight: bold;
+            padding: 15px 5px;
+            border-radius: 0px 0px 10px 10px;
+            vertical-align: middle;
+        }
+        img {
+            width: 100%;
+            &:nth-child(1){
+                position: relative;
+                max-width: 300px;
+                z-index: 2;
+                margin: 0 auto;
+                display: block;
+                width: 100%;
+            }
+       
+        }
+    }
+
+    .right {
+        display: inline-block;
+        text-align: center;
+        background-color: #fff;
+        border-radius: 250px 0px 0px 250px;
+        flex: 1.6;
+        .title{
+            font-size: 28px;
+            font-weight: 500;
+            color: #009e96;
+        }
+        p {
+            font-size: 18px;
+            color: #45392f;
+            line-height: 25px;
+            b {
+                color: #009e96;
+            }
+
+            span {
+                color: #009e96;
+                font-weight: bold;
+            }
+        }
+
+        .twoBtn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            align-items: baseline;
+            margin-bottom: 50px;
+
+            div {
+                position: relative;
+
+                p {
+                    position: absolute;
+                    font-size: 13px;
+                    margin-bottom: 0px;
+                    margin-top: 0px;
+                    text-align: center;
+                    width: 100%;
+                }
+            }
+        }
+
+        .btn {
+            margin: 0px 10px;
+        }
+
+        .notice {
+            svg{
+                vertical-align: middle;
+            }
+            .white {
+                fill: #FFFFFF;
+            }
+            text-align: center;
+            margin: 20px auto;
+            position: relative;
+            z-index: 5;
+            display: block;
+            font-size: 14px;
+            color: #45392f;
+            line-height: 20px;
+        }
+    }
+}
+@media (min-width: 1200px) {
+    .kv .tab_kv img {
+        height: 368px;
+    }
+}
+
+@media (min-width: 900px) {
+    .footerWarning_txt {
+        margin-left: 350px;
+    }
+
+    .footerWarning_title {
+        float: left;
+        font-size: 30px;
+    }
+}
+
+@media screen and (min-width: 801px) {
+    .buns {
+        display: none;
+    }
+
+    nav {
+        float: right;
+        width: auto;
+
+        ul {
+            margin: 11px 0;
+
+            li {
+                display: inline-block;
+            }
+        }
+    }
+}
+@media(max-width:1440px) {
+    #discount{
+        .container {
+            width: 70%;
+            max-width: 1200px;
+        }
+    }
+}
+@media(max-width:1200px) {
+    #discount{
+        .container{
+            flex-direction: column-reverse;
+            
+        }
+        .left{
+            width: 100%;
+            height: 250px;
+            flex: auto;
+            img:nth-child(1){
+                max-width: 240px;
+            }
+        }
+        .right{
+            border-radius: 20px;
+            margin: 20px;
+        }
+    }
+}
+@media(max-width:1024px) {
+    #discount{
+        .btn {
+            font-size: 20px;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+        }
+    }
+}
+@media screen and (max-width: 1000px) {
+    #tab1 {
+        .row {
+            .col-6 {
+                max-width: 300px;
+            }
+        }
+    }
+
+    .balloon_bear {
+        position: absolute;
+        top: -84px;
+        left: 128px;
+        max-width: 150px;
+    }
+
+    .efingo_txt {
+        text-align: center;
+        margin-bottom: 26px;
+        max-width: 594px;
+    }
+
+    .card {
+        width: 80% !important;
+        position: relative;
+    }
+
+    #tab2 {
+        .shopping {
+            .shopping_pic {
+                display: block;
+                margin: 0 auto;
+            }
+
+            display: flex;
+            flex-direction: column-reverse;
+            justify-content: center;
+            margin-top: 100px;
+
+            .shopping_txt {
+                display: block;
+                margin: 20px auto;
+            }
+        }
+
+        .currency {
+            .credit_txt {
+                display: block;
+                margin: 20px auto;
+            }
+
+            .credit {
+                display: block;
+                margin: 0 auto;
+            }
+        }
+
+        .card {
+            img {
+                max-width: 156px;
+                display: block;
+                margin: 10px auto;
+            }
+        }
+
+        .btn-secondary {
+            margin: 0 auto 20px;
+        }
+
+        .txt {
+            p {
+                margin: 16px auto;
+            }
+        }
+
+        .row {
+            .col-6 {
+                display: block;
+                margin: 0 auto;
+                width: 100%;
+                text-align: center;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:992px) {
+    .balloon_bear {
+        left: -7px;
+    }
+
+    #tab1 {
+        .bottom_section {
+            padding: 50px 20px 0;
+
+            .more {
+                margin: 20px auto;
+            }
+
+            .block {
+                margin-bottom: 48px;
+                text-align: center;
+
+                a {
+                    margin: 0 auto;
+                }
+
+                p {
+                    margin: 16px auto;
+                }
+            }
+
+            .container {
+                text-align: center;
+
+                .bottom_pic {
+                    position: static;
+                    max-width: 378px;
+                }
+            }
+        }
+    }
+
+    #tab2 {
+        .bottom_section {
+            padding: 50px 20px 0;
+
+            .more {
+                margin: 20px auto;
+            }
+
+            .block {
+                margin-bottom: 48px;
+                text-align: center;
+
+                a {
+                    margin: 0 auto;
+                }
+
+                p {
+                    margin: 16px auto;
+                }
+            }
+
+            .container {
+                text-align: center;
+
+                .bottom_pic {
+                    position: static;
+                    max-width: 378px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 800px) {
+
+    #discount {
+        .left {
+            img{
+                &:nth-child(2){
+                    bottom: -48px;
+                   
+                    left: 62%;
+                }
+            }
+            p {
+                font-size: 20px;
+            }
+        }
+.container{
+    flex-wrap: wrap;
+    display: block;
+    padding-bottom: 20px;
+    height: auto;
+}
+        .right {
+            position: relative;
+            z-index: 2;
+            width: 90%;
+            margin: 0 auto;
+            display: block;
+            padding: 10px 0;
+            .btn {
+                margin: 10px;
+                width: 200px;
+            }
+            .title{
+                font-size: 22px!important;
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    .kv {
+        height: 630px;
+
+        svg {
+            margin: 100px auto;
+        }
+    }
+}
+@media screen and (max-width: 600px){
+    #discount {
+        .twoBtn {
+            flex-direction: column;
+        }
+        .right {
+            .twoBtn {
+                align-items: center;
+                margin-bottom: 30px;
+
+                .btnY {
+                    margin-bottom: 2px;
+                }
+
+                .btnR {
+                    margin-top: 20px;
+                }
+            }
+        }
+        .left{
+            img:nth-child(2){
+                left: 57%;
+                width: 320px;
+            }
+        }
+    }
+}
+@media screen and (max-width:576px) {
+    #discount {
+        .container {
+        }
+
+        .left {
+            width: 100%;
+            svg {
+                width: 40px;
+                height: auto;
+            }
+
+            img {
+                width: 75%;
+                &:nth-child(2){
+                    left: auto;
+                    right: 0;
+                }
+            }
+        }
+    }
+    .video iframe {
+        height: 300px;
+    }
+    .btn-group {
+        a {
+            display: block;
+            margin: 10px auto;
+        }
+    }
+    .balloon_bear{
+        position: static;
+    }
+    .float_btn {
+        a {
+            width: 50px;
+            height: 50px;
+            font-size: 14px;
+        }
+    }
+
+    .scroll_down {
+        max-width: 26px;
+    }
+
+    .bottom_section h3 {
+        font-size: 22px !important;
+    }
+
+    p {
+        font-size: 16px !important;
+    }
+
+    h3 {
+        font-size: 22px !important;
+    }
+
+    .efingo_txt h2 {
+        font-size: 22px !important;
+    }
+
+    .efingo_txt a h3 {
+        font-size: 18px !important;
+    }
+
+    .card {
+        max-width: 100%;
+        display: block;
+        width: 100% !important;
+    }
+
+    #tab1 {
+        .bottom_section {
+            .block {
+                h2 {
+                    font-size: 22px !important;
+                }
+            }
+        }
+
+        .Conservative {
+            .Conservative_txt {
+                .col-6 {
+                    display: block;
+                    margin: 20px auto;
+
+                }
+            }
+
+            margin-top: 50px;
+        }
+
+        .row {
+
+            .col-6 {
+                display: block;
+                margin: 20px auto;
+            }
+
+            .icon {
+                display: block;
+                margin: 40px auto 10px;
+            }
+
+            .txt {
+                text-align: center;
+            }
+        }
+    }
+
+    #tab2 {
+        .currency{
+            .credit_txt{
+                .table_pic{
+                    .percent_11{
+                        top: -40px;
+                    }
+                    .table{
+                        margin-top: 50px;
+                    }
+                }
+            }
+        }
+      .shopping{
+        .shopping_txt{
+            .table_pic{
+                margin-top: 42px;
+                .percent_29{
+                    top: -38px;
+                    max-width: 43px;
+                    right: 0;
+                }
+               
+            }
+        } 
+      }
+        .bottom_section {
+            .block {
+                h2 {
+                    font-size: 22px !important;
+                }
+            }
+        }
+    }
+
+    .gradient {
+        padding-top: 30px;
+        padding-top: 0;
+    }
+
+    .kv {
+        padding-top: 80px;
+        height: 434px;
+
+        svg {
+            margin: 54px auto;
+        }
+
+        h1 {
+            font-size: 32px;
+        }
+
+        .tabs {
+            li {
+                max-width: 172px;
+
+                a {
+                    h2 {
+                        font-size: 18px;
+                    }
+
+                    margin: 0 10px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:375px) {
+    #tab2 {
+        .percent_11 {
+            max-width: 48px !important;
+            top: -19px !important;
+        }
+
+        .shopping {
+            .shopping_txt {
+                .table_pic {
+                    .percent_29 {
+                        top: -38px;
+                        max-width: 43px;
+                        right: 0;
+                    }
+
+                }
+            }
+        }
+    }
+
+    .balloon_bear {
+        position: static;
+    }
+
+  
+
+    .kv {
+        height: 397px;
+
+        .tabs {
+            li {
+                max-width: 150px;
+
+                a {
+                    h2 {
+                        font-size: 16px !important;
+                        margin: 0;
+                    }
+
+                    margin: 0 10px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:320px) {
+    .kv {
+        .tabs {
+            li {
+                max-width: 134px;
+
+                a {
+                    h2 {
+                        font-size: 15px !important;
+                        margin: 0;
+                    }
+
+                    margin: 0 8px;
+                }
+            }
+        }
+    }
+}
